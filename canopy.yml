@@ -3,6 +3,7 @@ collection:
   - https://api.dc.library.northwestern.edu/api/v2/collections/94536627-cfdf-413c-852b-0cb16d986da3?as=iiif
 metadata:
   - Subject
+  - Date
   - Language
   - Genre
 featured:
@@ -30,5 +31,5 @@ search:
         - tagging
 theme:
   appearance: light
-  accentColor: indigo
-  grayColor: slate
+  accentColor: brown
+  grayColor: sand
