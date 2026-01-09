@@ -2,4 +2,81 @@
 title: "Virtual Exhibit"
 ---
 
-# 
+# Exhibition Text and Single Image
+
+*Medium: Text on Panel*
+*Dimensions: Variable*
+
+An exhibit label is more than a name tag—it is a bridge between the artwork and its audience. Its primary role is identification, providing essential details such as the title, artist, date, and medium. This information situates the piece within its historical and creative context.
+Beyond identification, labels offer interpretation. A concise description or curatorial insight can illuminate themes, techniques, or symbolism, helping viewers engage more deeply—especially with abstract or conceptual works.  
+
+Labels also serve an educational function, introducing visitors to art movements, cultural influences, and historical significance. They often include accessibility features such as translations, braille, or QR codes for audio guides, ensuring inclusivity.
+
+Finally, exhibit labels support cataloging and research, often displaying accession numbers for institutional records.
+In short, a well-crafted label transforms passive viewing into active understanding, guiding visitors to connect with art on intellectual and emotional levels.
+
+*Text generated with Microsoft Copilot using the prompt "Explain the purpose of an art exhibit label in the format of an exhibit label."
+
+<Image
+  src="https://iiif.dc.library.northwestern.edu/iiif/3/3d4a01f1-664d-48aa-89b7-a887d3843644"
+  isTiledImage
+  alt="Lithographs of historic buildings in Lucknow, India"
+  caption="Historic buildings in Lucknow, India, 1860. No. 12 The Shah Nujeef. No. 13 Khoorsyad Munzil. No. 14 The Motee Mahal. No. 15 Interior of the Compound of Alum Bagh."
+/>
+
+## Image with Annotation
+
+<Image
+  src="https://iiif.dc.library.northwestern.edu/iiif/3/138a94b0-175a-4152-98c7-df58661ce7d5"
+  isTiledImage
+  alt="Annotated Boondi panorama"
+  caption="Annotations describe figures and landmarks inside the panorama."
+  annotations={[
+    {
+      annotation: {
+        id: "https://iiif.dc.library.northwestern.edu/iiif/3/f7409acd-e3f9-496a-b733-81f46d4ffa4f/annotation/0",
+        type: "Annotation",
+        motivation: ["tagging"],
+        body: [
+          {
+            id: "https://iiif.dc.library.northwestern.edu/iiif/3/f7409acd-e3f9-496a-b733-81f46d4ffa4f/annotation/0/body/0",
+            type: "TextualBody",
+            value: "Five travelers pause with their horses near the ridge.",
+          },
+        ],
+        target: {
+          type: "SpecificResource",
+          source: {
+            id: "https://iiif.dc.library.northwestern.edu/iiif/3/f7409acd-e3f9-496a-b733-81f46d4ffa4f/canvas/1",
+            type: "Canvas",
+          },
+          selector: {
+            type: "FragmentSelector",
+            value: "xywh=1900,4050,1500,1000",
+          },
+        },
+      },
+      targetIndex: 0,
+    },
+  ]}
+/>
+
+# Exhibition Text and Multiple Images
+
+You may wish to group several images to present a themed display. You can do this with the Viewer component.
+
+<Viewer iiifContent="https://api.dc.library.northwestern.edu/api/v2/works/0b2b8793-d4c7-4a55-8b53-61bfc54bc908?as=iiif" />
+
+## Viewer with information panel
+
+<Viewer
+  iiifContent="https://api.dc.library.northwestern.edu/api/v2/works/0b2b8793-d4c7-4a55-8b53-61bfc54bc908?as=iiif"
+  options={{
+    showTitle: true,
+    informationPanel: {
+      open: true,
+      renderAbout: true,
+    },
+  }}
+/>
+
