@@ -5,94 +5,219 @@ referencedManifests:
   - https://api.dc.library.northwestern.edu/api/v2/works/213f2874-afca-452d-9bf3-ef0fe85a81ae?as=iiif
 ---
 
-<Gallery
-  title="Displaying Empire"
-  description={
-    <>
-      The term <em>Company Painting</em> has come to stand in for works produced
-      by Indian and British artists associated with the East India Company over
-      the course of the consolidation of the British Empire in India from the
-      eighteenth to the twentieth centuries. Works in this broad category range
-      from depictions of customs and occupations, natural history subjects, and
-      topographical paintings embodying the complex visual processes that shaped
-      Britain’s reimagination of India as a colony and extension of its empire.
-      This student-curated exhibit is based on a cache of East India
-      Company-associated paintings, prints, and illustrated books in the Charles
-      Deering McCormick Library's Special Collections and University Archives.
-    </>
-  }
->
+# Displaying Empire
 
+The term _Company Painting_ has come to stand in for works produced
+by Indian and British artists associated with the East India Company over
+the course of the consolidation of the British Empire in India from the
+eighteenth to the twentieth centuries. Works in this broad category range
+from depictions of customs and occupations, natural history subjects, and
+topographical paintings embodying the complex visual processes that shaped
+Britain’s reimagination of India as a colony and extension of its empire.
+This student-curated exhibit is based on a cache of East India
+Company-associated paintings, prints, and illustrated books in the Charles
+Deering McCormick Library's Special Collections and University Archives.
+
+<ButtonWrapper>
+  <Button href="/displaying-empire/3-artist-bios" label="Artist Biographies" />
+  <Button href="timeline" label="Timeline" />
+  <Button href="maps" label="Maps" />
+</ButtonWrapper>
+
+<Gallery>
   <Gallery.Item
     referencedManifests={[
-      "https://api.dc.library.northwestern.edu/api/v2/works/213f2874-afca-452d-9bf3-ef0fe85a81ae?as=iiif",
+      "https://api.dc.library.northwestern.edu/api/v2/works/bf59dad4-76f9-4567-b0e2-3c6050663e2d?as=iiif",
     ]}
-    caption="Embassy of Hyderbeck to Calcutta, 1800"
-    title="Embassy of Hyderbeck to Calcutta"
-    summary="This large-scale mezzotint and stipple engraving depicts a diplomatic procession traveling through the Indian landscape en route to Calcutta. At the center of the composition, elaborately dressed figures ride in howdahs atop horses, accompanied by soldiers, attendants, and local travelers carrying baskets and goods. Flags, spears, and musical instruments emphasize the ceremonial nature of the embassy, while ruins and distant architecture situate the scene within a historicized South Asian setting. Based on a painting by Johan Joseph Zoffany and engraved by Richard Earlom in London, the print translates a moment of cross-cultural encounter into a highly detailed image intended for British audiences, reflecting late eighteenth-century imperial interests in India and the East India Company’s diplomatic presence."
-    thumbnail="https://images.collections.yale.edu/iiif/2/ycba:999f94b5-2285-4c99-bc01-786e1bbc942f/full/600,/0/default.jpg"
-
->
-
-    <div class="canopy-gallery-item__content_flex">
-        <ImageStory
-        iiifContent="https://manifest.storiiies-editor.cogapp.com/v3/3683j"
+    caption="A Suttee: Preparing for the Immolation of a Hindoo Widow"
+    title="A Suttee: Preparing for the Immolation of a Hindoo Widow"
+    description={`<p>A bare-breasted woman draped in a white garment prepares for sati–a sacrifice in which a widow burns herself upon the death of her husband–amongst a crowd of Hindu worshippers at the Benares Temple in northern India. Although both British and Indian people had pushed for sati’s abolition, colonial powers often cited the brutal nature of the ritual as justification for their rule. The British government officially outlawed sati in 1829.</p><p>The print appears on page 7 of Fisher’s Drawing Room Scrap Book (1836). Each volume consisted of 36 engravings accompanied by descriptive writing. The volumes were reproduced and sold to the British public, who would display them on drawing room tables in their homes and peruse them for entertainment and leisure.</p>`}
+  >
+    <GalleryContent flex={true}>
+      <ImageStory
+        iiifContent="https://manifest.storiiies-editor.cogapp.com/v3/0583o"
         height="850"
-        />
-        <aside>
-
-            <dl>
-                <dt>Date</dt>
-                <dd>1800</dd>
-
-                <dt>Publication Date</dt>
-                <dd>1800</dd>
-
-                <dt>Creator</dt>
-                <dd>Richard Earlom (after Johan Joseph Zoffany)</dd>
-
-                <dt>Creator Dates</dt>
-                <dd>Richard Earlom, 1743–1822; Johan Joseph Zoffany, 1733–1810</dd>
-
-                <dt>Medium</dt>
-                <dd>Mezzotint and stipple engraving on cream laid paper</dd>
-
-                <dt>Image Size</dt>
-                <dd>18 7/8 × 26 in (47.9 × 66 cm)</dd>
-
-                <dt>Sheet Size</dt>
-                <dd>19 7/8 × 26 1/4 in (50.5 × 66.7 cm)</dd>
-
-                <dt>Attribution</dt>
-                <dd>Paul Mellon Collection, Yale Center for British Art</dd>
-
-                <dt>Accession #</dt>
-                <dd>B1985.36.1303</dd>
-
-                <dt>Curator</dt>
-                <dd>Student Name</dd>
-            </dl>
-
-        </aside>
-    </div>
-
+      />
+      <aside>
+        <dl>
+          <dt>Creator</dt>
+          <dd>Capt. Robert Grindlay (1786-1877), Artist</dd>
+          <dd>James Redaway (1797-1858), Engraver</dd>
+          <dt>Date</dt>
+          <dd>1844</dd>
+          <dt>Medium</dt>
+          <dd>Engraving</dd>
+          <dt>Image size</dt>
+          <dd>12.1 x 18.8 cm</dd>
+          <dt>Sheet size</dt>
+          <dd>21.1 (20.2) x 27.2 cm</dd>
+          <dt>Attribution</dt>
+          <dd>
+            Donation from the library of Donald K. Adams and Lawrence D. Stewart
+            to the Charles Deering McCormick Library of Special Collections
+          </dd>
+          <dt>Call number</dt>
+          <dd>L1 Prints R3128s</dd>
+          <dt>Curator</dt>
+          <dd>Student Name</dd>
+        </dl>
+      </aside>
+    </GalleryContent>
+  </Gallery.Item>
+  <Gallery.Item
+    referencedManifests={[
+      "https://api.dc.library.northwestern.edu/api/v2/works/b66de0be-ea16-4c49-8b4d-3c231ad5e2c3?as=iiif",
+    ]}
+    caption="Ceremony of weighing the Great Mogul"
+    title="Ceremony of weighing the Great Mogul"
+    description={`<p>Notice how the emperor is standing upon the scale. This posture is historically inaccurate for the ceremony, as the emperor should be seated. This print was created as an exotic spectacle for the 18th-century European audience.</p><p> It was published in John Hamilton Moore’s collection of travel journals, A New and Complete Collection of Voyages and Travels (1785). At the time of its publication, British artists traveled to India, documenting Indian life and landscapes through their art. By presenting an impressionist view of the Mughal weighing ceremony, the print reflects a European romanticization of the "Orient" rather than observed reality.</p>`}
+  >
+    <GalleryContent flex={true}>
+      <ImageStory
+        iiifContent="https://manifest.storiiies-editor.cogapp.com/v3/6983r"
+        height="850"
+      />
+      <aside>
+        <dl>
+          <dt>Creator</dt>
+          <dd>Louis Fabricius Dubourg (1693-1775), Artist</dd>
+          <dd>James Roberts (1725-1799), Engraver</dd>
+          <dt>Date</dt>
+          <dd>c. 1775-1785</dd>
+          <dt>Medium</dt>
+          <dd>Engraving</dd>
+          <dt>Image size</dt>
+          <dd>15.8 x 26.7 cm</dd>
+          <dt>Plate size</dt>
+          <dd>19 x 29 cm</dd>
+          <dt>Sheet size</dt>
+          <dd>24 x 37 cm</dd>
+          <dt>Attribution</dt>
+          <dd>
+            Donald K. Adams and Lawrence D. Stewart Collection of Prints,
+            Special Collections
+          </dd>
+          <dt>Call number</dt>
+          <dd>L2 Prints R6452c</dd>
+          <dt>Curator</dt>
+          <dd>Student Name</dd>
+        </dl>
+      </aside>
+    </GalleryContent>
   </Gallery.Item>
   <Gallery.Item
     referencedManifests={[
       "https://api.dc.library.northwestern.edu/api/v2/works/cdb547e9-d5c1-4c1a-9ca5-b3fad0da4915?as=iiif",
     ]}
-    caption="The Great Triad in the Cave Temple of Elephanta near Bombay"
-    title="The Great Triad in the Cave Temple of Elephanta near Bombay"
-    thumbnail="https://iiif.dc.library.northwestern.edu/iiif/3/dbf73257-f8f0-47f2-8185-6ad659af6b95/full/!640,481/0/default.jpg"
-    /> 
+    caption="Miniatures on mica, seated woman sewing"
+    title="Miniatures on mica, seated woman sewing"
+    description={`<p>Leg raised, a seated woman spreads the fabric of presumably a ghagral (folk-style skirt). Vivid, likely natural pigments and fine shading on laminated sheets of mica bring her to life in this miniature, typically sold within a souvenir set of Indian subjects.</p><p>Depicting occupational types rather than individuals, these taxonomic miniatures essentialize details with repeated faces and poses to fit into a pocket-sized space for mass consumption. Though catering to European exoticizing sensibilities, the natural Indian pigments’ rich history still expresses ethnic connectedness and quiet respect for fellow Indian subjects amid commercialization of their land, resources, and ways of life.</p>`}
+  >
+    <GalleryContent flex={true}>
+      <ImageStory
+        iiifContent="https://manifest.storiiies-editor.cogapp.com/v3/d583m"
+        height="850"
+      />
+      <aside>
+        <dl>
+          <dt>Creator</dt>
+          <dd>Unknown Indian artist</dd>
+          <dt>Date</dt>
+          <dd>c. 1840</dd>
+          <dt>Medium</dt>
+          <dd>Watercolor, mica</dd>
+          <dt>Image size</dt>
+          <dd>4.33 in x 3.15 in</dd>
+          <dt>Attribution</dt>
+          <dd>
+            Courtesy of Charles Deering McCormick Library of Special Collections
+            of Northwestern University Libraries
+          </dd>
+          <dt>Call number</dt>
+          <dd>751.77095 M665</dd>
+          <dt>Curator</dt>
+          <dd>Student Name</dd>
+        </dl>
+      </aside>
+    </GalleryContent>
+  </Gallery.Item>
   <Gallery.Item
     referencedManifests={[
-      "https://api.dc.library.northwestern.edu/api/v2/works/cdb547e9-d5c1-4c1a-9ca5-b3fad0da4915?as=iiif",
+      "https://api.dc.library.northwestern.edu/api/v2/works/26f1a562-e331-4fc3-a086-233a63e3467c?as=iiif",
     ]}
-    caption="A Hindoo Place of Worship"
-    title="A Hindoo Place of Worship"
-    thumbnail="https://iiif.dc.library.northwestern.edu/iiif/3/a24c4bb4-0f05-40b8-bf27-76c5a8f42714/full/!640,877/0/default.jpg"
- />
+    caption="Dancing Snake and Musicians"
+    title="Dancing Snake and Musicians"
+    description={`<p>A snake charmer plays his bīn while a hooded snake raises from the ground. This exoticized Indian bazaar scene is based on a drawing purportedly made on-site by Baron de Montalembert, a French officer serving in the British Army.</p><p> The engraving was published as an illustration in Oriental Memoirs: A Narrative of Seventeen Years Residence in India by James Forbes, a British East India Company official who was also the father-in-law of Montalembert. The use of soft-ground etching lends the print a sense of immediacy. Framed as authentic representation of the Orient, it reflects how travelogue illustrations and texts operated together to fabricate colonial narratives.</p>`}
+  >
+    <GalleryContent flex={true}>
+      <ImageStory
+        iiifContent="https://manifest.storiiies-editor.cogapp.com/v3/0c83z"
+        height="850"
+      />
+      <aside>
+        <dl>
+          <dt>Creator</dt>
+          <dd>Marc René de Montalembert (1777–1831), Artist</dd>
+          <dd>Thomas Charles Wageman (approx. 1787–1863), Engraver</dd>
+          <dt>Date</dt>
+          <dd>1812</dd>
+          <dt>Medium</dt>
+          <dd>Engraving on paper</dd>
+          <dt>Image size</dt>
+          <dd>11.81 in x 9.25 in</dd>
+          <dt>Sheet size</dt>
+          <dd>30 cm x 23.5 cm</dd>
+          <dt>Attribution</dt>
+          <dd>Donald K. Adams and Lawrence D. Stewart Collection of Prints</dd>
+          <dt>Call number</dt>
+          <dd>L1 Prints W129d</dd>
+          <dt>Curator</dt>
+          <dd>Student Name</dd>
+        </dl>
+      </aside>
+    </GalleryContent>
+  </Gallery.Item>
+  <Gallery.Item
+    referencedManifests={[
+      "https://api.dc.library.northwestern.edu/api/v2/works/b66de0be-ea16-4c49-8b4d-3c231ad5e2c3?as=iiif",
+    ]}
+    caption="Tombs of the kings of Golconda"
+    title="Tombs of the kings of Golconda"
+    description={`<p>This European travelogue print was for British audiences to learn about Indian sites, depicts the Qutb Shahi necropolis. These tombs contained sultans of Golconda, who ruled the middle India province from 1518 to 1687.</p><p>The nine tombs follow the Qutb Shahi style, a fusion of Persian, Pathan, and Hindu forms. The double-height structures are topped with tall onion domes, decorated with arcades of pointed arches. The buildings’ facades are intricately ornamented with lime stucco, plaster, and pillars. Indian merchants with camels and military personnel are depicted in the foreground visiting this popular site watched over by British officers.</p>`}
+  >
+    <GalleryContent flex={true}>
+      <ImageStory
+        iiifContent="https://manifest.storiiies-editor.cogapp.com/v3/6983r"
+        height="850"
+      />
+      <aside>
+        <dl>
+          <dt>Creator</dt>
+          <dd>Louis Fabricius Dubourg (1693-1775), Artist</dd>
+          <dd>James Roberts (1725-1799), Engraver</dd>
+          <dt>Date</dt>
+          <dd>c. 1775-1785</dd>
+          <dt>Medium</dt>
+          <dd>Engraving</dd>
+          <dt>Image size</dt>
+          <dd>15.8 x 26.7 cm</dd>
+          <dt>Plate size</dt>
+          <dd>19 x 29 cm</dd>
+          <dt>Sheet size</dt>
+          <dd>24 x 37 cm</dd>
+          <dt>Attribution</dt>
+          <dd>
+            Donald K. Adams and Lawrence D. Stewart Collection of Prints,
+            Special Collections
+          </dd>
+          <dt>Call number</dt>
+          <dd>L2 Prints R6452c</dd>
+          <dt>Curator</dt>
+          <dd>Student Name</dd>
+        </dl>
+      </aside>
+    </GalleryContent>
+  </Gallery.Item>
 </Gallery>
 <Map
   height="900px"
@@ -101,16 +226,16 @@ referencedManifests:
   geoReferences={["https://annotations.allmaps.org/images/26e0416161f6765c"]}
   mapKey={[
     {id: "city", label: "City", type: "small"},
-    {id: "site", label: "Site", type: "small"},
+    {id: "landmark", label: "Landmark", type: "small"},
     {id: "works", label: "Works"},
   ]}
 >
   <MapPoint lat="34.5553" lng="69.2075" key="city" title="Kabul" />
   <MapPoint lat="28.45" lng="76.750" key="city" title="Delhi" />
-  <MapPoint lat="28.4" lng="76.8" key="site" title="Red Fort Delhi" />
-  <MapPoint lat="28.25" lng="76.7" key="site" title="Qutb Minar" />
+  <MapPoint lat="28.4" lng="76.8" key="landmark" title="Red Fort Delhi" />
+  <MapPoint lat="28.25" lng="76.7" key="landmark" title="Qutb Minar" />
   <MapPoint lat="27.25" lng="77.665" key="city" title="Agra" />
-  <MapPoint lat="27.25" lng="77.8" key="site" title="Taj Mahal" />
+  <MapPoint lat="27.25" lng="77.8" key="landmark" title="Taj Mahal" />
   <MapPoint lat="31.38" lng="74.3793" key="city" title="Lahore" />
   <MapPoint
     lat="31.42"
@@ -120,35 +245,33 @@ referencedManifests:
   />
   <MapPoint lat="33.57" lng="75.2" key="city" title="Kashmir (Srinagar)" />
   <MapPoint lat="23.65" lng="72.83" key="city" title="Ahmedabad" />
-  <MapPoint lat="23.4793" lng="77.7399" key="site" title="Sanchi" />
+  <MapPoint lat="23.4793" lng="77.7399" key="landmark" title="Sanchi" />
   <MapPoint lat="21.65" lng="73" key="city" title="Surat" />
   <MapPoint lat="19.5" lng="72.72" key="city" title="Bombay (Mumbai)" />
-  <MapPoint lat="20.4508" lng="75.0218" key="site" title="Ellora Caves" />
-  <MapPoint lat="20.9759" lng="75.5456" key="site" title="Ajanta Caves" />
-  <MapPoint lat="20.3667" lng="75.0556" key="site" title="Daulatabad Fort" />
+  <MapPoint lat="20.4508" lng="75.0218" key="landmark" title="Ellora Caves" />
+  <MapPoint lat="20.9759" lng="75.5456" key="landmark" title="Ajanta Caves" />
+  <MapPoint
+    lat="20.3667"
+    lng="75.0556"
+    key="landmark"
+    title="Daulatabad Fort"
+  />
   <MapPoint lat="22.8" lng="88.45" key="city" title="Calcutta (Kolkata)" />
   <MapPoint lat="23.99" lng="90.4125" key="city" title="Dacca (Dhaka)" />
   <MapPoint lat="27.4728" lng="89.639" key="city" title="Thimpu (Thimphu)" />
   <MapPoint lat="29.652" lng="91.1721" key="city" title="Lhasa" />
   <MapPoint lat="19.93" lng="85.8312" key="city" title="Puri" />
   <MapPoint lat="13.08" lng="80.45" key="city" title="Madras (Chennai)" />
-  <MapPoint lat="12.6208" lng="80.1936" key="site" title="Mahabalipuram" />
+  <MapPoint lat="12.6208" lng="80.1936" key="landmark" title="Mahabalipuram" />
   <MapPoint lat="27.8622" lng="84.6" key="city" title="Kathmandu" />
-  <MapPoint lat="28.5" lng="86.5" key="site" title="Mount Everest" />
+  <MapPoint lat="28.5" lng="86.5" key="landmark" title="Mount Everest" />
   <MapPoint lat="25.68" lng="85" key="city" title="Patna" />
   <MapPoint lat="25.5" lng="82.7" key="city" title="Benaras (Varanasi)" />
   <MapPoint
     lat="10.55"
     lng="79.25"
-    key="site"
+    key="landmark"
     title="Tanjore (Brihadeeswarar Temple)"
   />
   <MapPoint lat="9.6" lng="78.17" key="city" title="Madurai" />
 </Map>
-
-<ButtonWrapper>
-  <Button href="3-artist-bios" label="Artist Biographies" />
-  <Button href="/timeline" label="Timeline" />
-  <Button href="/maps" label="Maps" />
-
-</ButtonWrapper>
