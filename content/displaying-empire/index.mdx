@@ -320,48 +320,22 @@ Deering McCormick Library's Special Collections and University Archives.
     ]}
     caption="British India"
     title="British India"
-    description={
-      <>
-        <p>
-         map
-        </p>
-        <p>
-          map
-        </p>
-        <p>
-          description
-        </p>
-      </>
-    }
+
+    
   >
-    <GalleryContent flex={true}>
-      <Image
-        iiifContent="https://api.dc.library.northwestern.edu/api/v2/works/db4ab01b-f25e-4270-a6f4-113c3e9ecc01?as=iiif"
-        height="850"
-      />
-      <aside>
-        <dl>
-          <dt>Date</dt>
-          <dd>1858</dd>
-          <dt>Creators</dt>
-          <dd>Cartographer and Engraver, John Rapkin, British</dd>
-          <dd>Engraver, George Greatbach, British</dd>
-          <dd>Contributor, Robert Montgomery Martin (1803-1868), British</dd>
-          <dd>Publisher, London Printing and Publishing Company</dd>
-          <dt>Medium</dt>
-          <dd>Engraving</dd>
-          <dt>Image size</dt>
-          <dd>30 x 22 cm</dd>
-          <dt>Attribution</dt>
-          <dd>
-            Courtesy of Charles Deering McCormick Library of Special Collections, Northwestern University.
-          </dd>
-          <dt>Call number</dt>
-          <dd>TK</dd>
-          <dt>Curator</dt>
-          <dd>Student Name</dd>
-        </dl>
-      </aside>
+    <GalleryContent >
+      <Viewer
+  iiifContent="https://api.dc.library.northwestern.edu/api/v2/works/db4ab01b-f25e-4270-a6f4-113c3e9ecc01?as=iiif"
+  options={{
+    showTitle: true,
+    informationPanel: {
+      open: true,
+      renderAbout: true,
+      renderToggle: true
+    },
+  }}
+/>
+
     </GalleryContent>
   </Gallery.Item>
   <Gallery.Item
