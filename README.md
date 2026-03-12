@@ -1,19 +1,32 @@
-# Canopy Starter Template
+# Art & Empire
 
-This repository offers a pared-down starting point for new Canopy IIIF sites. When you need deeper documentation, examples, or release notes, head over to the main project at https://github.com/canopy-iiif/app.
+This repository holds the course companion site for **Art & Empire**, an art history digital humanities project by Dr. Yuthika Sharma in partnership with Academic Innovation at Northwestern University Libraries.
 
-## Updates
+## Project Focus
 
-Keep the starter current by running `npm install @canopy-iiif/app@latest` whenever a new release ships.
+- Curates high-resolution works from Northwestern's Special Collections (mica paintings, engravings, and bound documents) so students can analyze material culture beyond the physical classroom.
+- Provides space for rotating exhibits authored by seminar cohorts plus references to past student projects such as _Painting the Orient_ and the _Daniells Map Project_.
+- Connects class discussion to external research through related collections, links to partner institutions, and a course-wide bibliography.
 
-## Getting Started
+## Technical Overview
 
-Point `canopy.yml` at your preferred IIIF collection, add pages and layouts under `content/`, and walk through the getting started guide at https://canopy-iiif.github.io/docs/getting-started/ for a full tour.
+- Built with the [Canopy IIIF](https://github.com/canopy-iiif/app) static site generator (`@canopy-iiif/app` v1.9.x) and React 19. Content and layouts live under `content/` as MDX files, while reusable UI pieces (timelines, hero blocks, etc.) are composed from Canopy's component library.
+- IIIF collections, search defaults, and site metadata are configured in `canopy.yml`. Update manifests or branding there when introducing new exhibits.
+- Assets such as custom CSS, fonts, and imagery sit in `assets/`. Build artifacts are emitted to `site/` for publication.
 
-## Contributing
+## Working Locally
 
-All development happens in https://github.com/canopy-iiif/app. If you are interested in shaping Canopy IIIF, please open an issue, share feedback, or send a pull request.
+1. Install dependencies once: `npm install`.
+2. Run `npm run dev` to start the Canopy build script with hot reloading.
+3. Edit MDX under `content/` or tweak IIIF sources in `canopy.yml`. Saved changes appear immediately in the development server.
+4. Visit http://localhost:5001 in your browser.
 
-## License
+## Contributing Workflow
 
-Canopy IIIF is an open-source project by Mat Jordan under the MIT License. Copyright 2025 Mat Jordan.
+Course staff and student curators usually work in feature branches for each exhibit or unit, focusing on:
+
+- Drafting exhibit copy and scholarly apparatus (timelines, bibliographies, meta-indices).
+- Importing new IIIF manifests or creating derived image sequences.
+- Refining layouts or Tailwind tokens to match the semester's visual identity.
+
+Open an issue if you need new components or run into Canopy bugs; upstream development lives in the central Canopy IIIF project. This repository tracks only the course-specific theme, content, and deployment configuration.
