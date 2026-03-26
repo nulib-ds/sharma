@@ -328,23 +328,40 @@ Deering McCormick Library's Special Collections and University Archives.
     ]}
     caption="British India"
     title="British India"
-
+    description={
+      <>
+        <p>
+          The Company’s extensive cartographic surveys of India were initially produced through labor intensive means, requiring numerous assistants and local aides for measuring and moving instruments across a diverse terrain. With technical advancements, maps offered greater precision in delineating natural features, land and sea based trade routes, and infrastructure.
+        </p>
+        <p>
+          This hand-colored map reproduces a plate for an Atlas featuring the “Geographical, Political, Commercial & Statistical” history of the world, edited by statistician Robert Montogomery Martin, who compiled administrative data on British colonies. Vignettes of the ethnic population of Baluchis, a Mughal royal procession, the city of Lahore, and the Qutb Minar at Delhi, situate its wide-ranging geographic and cultural parameters. Colored boundaries indicate three major “Presidencies,” administrative divisions, military cantonments, and civil stations. A dark hatching is used for proposed railways that, within the decade, would become widespread connecting across major cities of the subcontinent.
+        </p>
+      </>
+    }
 >
 
-    <GalleryContent >
-      <Viewer
-
-iiifContent="https://api.dc.library.northwestern.edu/api/v2/works/db4ab01b-f25e-4270-a6f4-113c3e9ecc01?as=iiif"
-options={{
-    showTitle: true,
-    informationPanel: {
-      open: true,
-      renderAbout: true,
-      renderToggle: true
-    },
-  }}
-/>
-
+    <GalleryContent flex={true}>
+      <div style={{ width: "100%", height: "100%" }}>
+        <Viewer iiifContent="https://api.dc.library.northwestern.edu/api/v2/works/db4ab01b-f25e-4270-a6f4-113c3e9ecc01?as=iiif" />
+      </div>
+      <aside>
+              <dl>
+                <dt>Date</dt>
+                <dd>1851</dd>
+                <dt>Creators</dt>
+                <dd>Cartographer and Engraver, John Rapkin (1813-1899), British</dd>
+                <dd>Engraver, George Greatbach (1819-1884), British</dd>
+                <dd>Publisher, London Printing and Publishing Company</dd>
+                <dt>Medium</dt>
+                <dd>Engraving</dd>
+                <dt>Image size</dt>
+                <dd>30 x 22 cm</dd>
+                <dt>Attribution</dt>
+                <dd>
+                  Courtesy of Charles Deering McCormick Library of Special Collections, Northwestern University.
+                </dd>
+              </dl>
+            </aside>
     </GalleryContent>
 
   </Gallery.Item>
