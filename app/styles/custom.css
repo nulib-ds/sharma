@@ -69,3 +69,7 @@
     line-height: 1.45;
   }
 }
+
+.storiiies-viewer script {
+  display: none !important;
+}
