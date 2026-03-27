@@ -12,6 +12,10 @@
   }
 } */
 
+:root {
+  scroll-behavior: smooth;
+}
+
 .canopy-header {
   background-color: var(--color-gray-50);
 }

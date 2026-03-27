@@ -33,48 +33,232 @@ type ExhibitTabsProps = React.PropsWithChildren<{
 export default function ExhibitTabs({ defaultTab, children }: ExhibitTabsProps) {
   const tabs = extractTabs(children);
   const baseId = React.useId();
-  const radioName = `exhibit-tabs-${baseId}`;
+  const tabRefs = React.useRef<Array<HTMLAnchorElement | null>>([]);
+  const panelRefs = React.useRef<Record<string, HTMLElement | null>>({});
+
+  const resolvedDefaultSectionId = React.useMemo(() => {
+    if (!tabs.length) return null;
+    if (defaultTab && tabs.some((tab) => tab.id === defaultTab)) {
+      return defaultTab;
+    }
+    return tabs[0]?.id ?? null;
+  }, [defaultTab, tabs]);
+
+  const [activeSectionId, setActiveSectionId] = React.useState<string | null>(
+    resolvedDefaultSectionId,
+  );
+
+  React.useEffect(() => {
+    setActiveSectionId((current) => {
+      if (current && tabs.some((tab) => tab.id === current)) return current;
+      return resolvedDefaultSectionId;
+    });
+  }, [tabs, resolvedDefaultSectionId]);
+
+  React.useEffect(() => {
+    if (!defaultTab) return;
+    if (!tabs.some((tab) => tab.id === defaultTab)) return;
+    setActiveSectionId(defaultTab);
+  }, [defaultTab, tabs]);
+
+  React.useEffect(() => {
+    const knownIds = new Set(tabs.map((tab) => tab.id));
+    Object.keys(panelRefs.current).forEach((key) => {
+      if (!knownIds.has(key)) {
+        delete panelRefs.current[key];
+      }
+    });
+  }, [tabs]);
+
+  React.useEffect(() => {
+    if (!activeSectionId) return;
+    const index = tabs.findIndex((tab) => tab.id === activeSectionId);
+    if (index < 0) return;
+    const node = tabRefs.current[index];
+    if (!node || typeof node.scrollIntoView !== "function") return;
+    const scheduler =
+      typeof window !== "undefined" && typeof window.requestAnimationFrame === "function"
+        ? window.requestAnimationFrame
+        : (cb: FrameRequestCallback) => setTimeout(cb, 0);
+    scheduler(() => {
+      try {
+        node.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+      } catch (_) {
+        node.scrollIntoView();
+      }
+    });
+  }, [activeSectionId, tabs]);
+
+  React.useEffect(() => {
+    if (typeof window === "undefined") return;
+    if (!tabs.length) return;
+
+    let frame: number | null = null;
+
+    const resolveActiveSection = () => {
+      frame = null;
+
+      const navHeight = (() => {
+        const firstPanel = panelRefs.current[tabs[0]?.id ?? ""];
+        const navNode = tabRefs.current[0]?.closest(".exhibit-tabs__bar");
+        if (!navNode) return 0;
+        const rect = navNode.getBoundingClientRect();
+        return rect.height;
+      })();
+
+      const focusLine = window.scrollY + navHeight + 16;
+
+      let closestId: string | null = null;
+      let closestDistance = Number.POSITIVE_INFINITY;
+
+      tabs.forEach((tab) => {
+        const node = panelRefs.current[tab.id];
+        if (!node) return;
+        const rect = node.getBoundingClientRect();
+        const sectionTop = window.scrollY + rect.top;
+        const distance = Math.abs(sectionTop - focusLine);
+        if (distance < closestDistance) {
+          closestDistance = distance;
+          closestId = tab.id;
+        }
+      });
+
+      if (!closestId) return;
+      setActiveSectionId((current) => (current === closestId ? current : closestId));
+    };
+
+    const scheduleMeasurement = () => {
+      if (frame !== null) return;
+      frame = window.requestAnimationFrame(resolveActiveSection);
+    };
+
+    scheduleMeasurement();
+    window.addEventListener("scroll", scheduleMeasurement, { passive: true });
+    window.addEventListener("resize", scheduleMeasurement);
+
+    return () => {
+      window.removeEventListener("scroll", scheduleMeasurement);
+      window.removeEventListener("resize", scheduleMeasurement);
+      if (frame !== null) {
+        window.cancelAnimationFrame(frame);
+        frame = null;
+      }
+    };
+  }, [tabs]);
 
   if (!tabs.length) return null;
 
+  const focusTriggerAtIndex = (index: number) => {
+    const node = tabRefs.current[index];
+    if (!node || typeof node.focus !== "function") return;
+    try {
+      node.focus({ preventScroll: true });
+    } catch (_) {
+      node.focus();
+    }
+  };
+
+  const scrollToSection = (sectionId: string, panelDomId: string) => {
+    let node = panelRefs.current[sectionId];
+    if (!node && typeof document !== "undefined") {
+      node = document.getElementById(panelDomId) as HTMLElement | null;
+    }
+    if (!node) return;
+    setActiveSectionId(sectionId);
+    if (typeof node.scrollIntoView === "function") {
+      try {
+        node.scrollIntoView({ behavior: "smooth", block: "start" });
+      } catch (_) {
+        node.scrollIntoView();
+      }
+    }
+  };
+
+  const activateSectionAtIndex = (index: number) => {
+    const tab = tabs[index];
+    if (!tab) return;
+    const panelId = `${baseId}-panel-${tab.id}`;
+    scrollToSection(tab.id, panelId);
+    const scheduler =
+      typeof window !== "undefined" && typeof window.requestAnimationFrame === "function"
+        ? window.requestAnimationFrame
+        : (cb: FrameRequestCallback) => setTimeout(cb, 0);
+    scheduler(() => focusTriggerAtIndex(index));
+  };
+
+  const handleKeyDown = (event: React.KeyboardEvent, index: number) => {
+    if (!tabs.length) return;
+    const lastIndex = tabs.length - 1;
+    if (event.key === "ArrowRight" || event.key === "ArrowDown") {
+      event.preventDefault();
+      const nextIndex = index === lastIndex ? 0 : index + 1;
+      activateSectionAtIndex(nextIndex);
+      return;
+    }
+    if (event.key === "ArrowLeft" || event.key === "ArrowUp") {
+      event.preventDefault();
+      const prevIndex = index === 0 ? lastIndex : index - 1;
+      activateSectionAtIndex(prevIndex);
+      return;
+    }
+    if (event.key === "Home") {
+      event.preventDefault();
+      activateSectionAtIndex(0);
+      return;
+    }
+    if (event.key === "End") {
+      event.preventDefault();
+      activateSectionAtIndex(lastIndex);
+    }
+  };
+
   return (
-    <div className="exhibit-tabs" role="tablist" aria-label="Exhibit views">
-      {tabs.map((tab, index) => {
-        const inputId = `${baseId}-${tab.id}`;
-        const isDefault = defaultTab ? tab.id === defaultTab : index === 0;
+    <div className="exhibit-tabs">
+      <nav className="exhibit-tabs__bar" role="navigation" aria-label="Exhibit sections">
+        {tabs.map((tab, index) => {
+          const panelId = `${baseId}-panel-${tab.id}`;
+          const isActive = tab.id === activeSectionId;
 
-        const labelId = `${inputId}-label`;
-
-        return (
-          <div className="exhibit-tabs__entry" key={tab.id}>
-            <input
-              type="radio"
-              name={radioName}
-              id={inputId}
-              className="exhibit-tabs__radio"
-              defaultChecked={isDefault}
-              aria-labelledby={labelId}
-            />
-            <label
+          return (
+            <a
+              href={`#${panelId}`}
+              key={tab.id}
+              ref={(node) => {
+                tabRefs.current[index] = node;
+              }}
               className="exhibit-tabs__trigger"
-              htmlFor={inputId}
-              role="tab"
-              id={labelId}
-              aria-controls={`panel-${tab.id}`}
+              aria-controls={panelId}
+              aria-current={isActive ? "true" : undefined}
+              onClick={(event) => {
+                event.preventDefault();
+                scrollToSection(tab.id, panelId);
+              }}
+              onKeyDown={(event) => handleKeyDown(event, index)}
             >
               {tab.label}
-            </label>
+            </a>
+          );
+        })}
+      </nav>
+      <div className="exhibit-tabs__panels">
+        {tabs.map((tab) => {
+          const panelId = `${baseId}-panel-${tab.id}`;
+
+          return (
             <div
+              key={tab.id}
               className="exhibit-tabs__panel"
-              id={`panel-${tab.id}`}
-              role="tabpanel"
-              aria-labelledby={labelId}
+              id={panelId}
+              data-section-id={tab.id}
+              ref={(node) => {
+                panelRefs.current[tab.id] = node;
+              }}
             >
               {tab.content}
             </div>
-          </div>
-        );
-      })}
+          );
+        })}
+      </div>
     </div>
   );
 }
