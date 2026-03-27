@@ -185,6 +185,12 @@
   backdrop-filter: blur(12px);
 }
 
+body[data-canopy-gallery-locked="1"] {
+  .exhibit-tabs__bar {
+    z-index: 0 !important;
+  }
+}
+
 .exhibit-tabs__trigger {
   appearance: none;
   border: none;
@@ -225,8 +231,13 @@
   background-color: var(--color-gray-50);
 }
 
+.exhibit-tabs__panel[data-section-id="gallery"] {
+  z-index: 2 !important;
+}
+
 .canopy-map__canvas {
   max-height: 90vh !important;
+  z-index: 0;
 }
 
 .exhibit-tabs__sentinel {
