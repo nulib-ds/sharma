@@ -218,6 +218,10 @@
   display: none;
 }
 
+.exhibit-tabs__panel#panel-map {
+  display: block !important;
+}
+
 .exhibit-panel--map {
   padding: 0;
 }
