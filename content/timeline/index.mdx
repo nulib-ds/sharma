@@ -3,121 +3,124 @@ title: "Integrated Timeline"
 image: https://iiif.dc.library.northwestern.edu/iiif/3/cbf1c097-97b3-4bf3-9397-20f6b4305c7a/full/!1200,630/0/default.jpg
 ---
 
-# Integrated Timeline
-
-This timeline includes Indian leaders, major events, artistic activity, and American history.
-
 <ExhibitTabs defaultTab="timeline-1525-1700">
 
 <ExhibitTab id="timeline-1525-1700" label="1525-1700">
   <ExhibitPanel>
     <div className="exhibit-timeline-panel">
-      <Timeline
-        title=""
-        range={{start: "1525", end: "1700", granularity: "year"}}
-        scale="uniform"
-        height="1700px"
-        timelineKey={[
-          {id: "art", label: "Art and Architecture"},
-          {id: "people", label: "Emperors, Officials, Personalities"},
-          {id: "events", label: "Events and Developments"},
-        ]}
-      >
-        <TimelinePoint
+
+        <div style={{ textAlign: "center"}}>
+        # Integrated Timeline
+
+This timeline includes Indian leaders, major events, artistic activity, and American history.
+
+</div>
+<Timeline
+title=""
+range={{start: "1525", end: "1700", granularity: "year"}}
+scale="uniform"
+height="1700px"
+timelineKey={[
+{id: "art", label: "Art and Architecture"},
+{id: "people", label: "Emperors, Officials, Personalities"},
+{id: "events", label: "Events and Developments"},
+]} >
+<TimelinePoint
           date="1526"
           title="Mughal Emperor: Babur"
           summary="through 1530"
           key="people"
           side="right"
         />
-        <TimelinePoint
+<TimelinePoint
           date="1530"
           title="Mughal Emperor: Humayun"
           summary="through 1544, 1546–1556"
           key="people"
           side="right"
         />
-        <TimelinePoint
+<TimelinePoint
           date="1556"
           title="Mughal Emperor: Akbar"
           summary="through 1605"
           key="people"
           side="right"
         />
-        <TimelinePoint
+<TimelinePoint
           date="1565"
           title="First permanent European settlement in North America"
           summary="St Augustine, present-day Florida, founded by the Spanish"
           key="events"
           side="right"
         />
-        <TimelinePoint
+<TimelinePoint
           date="1580"
           title="Royal Polygot Bible presented to Akbar by the Jesuit Mission"
           summary="Printed in Antwerp 1568-72."
           key="art"
           side="left"
         />
-        <TimelinePoint
+<TimelinePoint
           date="1600"
           title="Dastaan-i Masih"
           summary="Jerome Xavier, French Jesuit priest and envoy, produces a volume in Persian on the story of Christ ‘Dastaan-i Masih’ illustrated by Akbar’s painters."
           key="art"
           side="left"
         />
-        <TimelinePoint
+<TimelinePoint
           date="1600"
           title="Queen Elizabeth grants the English East India Company charter for trade"
           summary="to break the monopoly of Dutch spice trade in the Indies."
           key="events"
           side="right"
         />
-        <TimelinePoint
+<TimelinePoint
           date="1605"
           title="Mughal Emperor: Jahangir"
           summary="through 1627"
           key="people"
           side="right"
         />
-        <TimelinePoint
+<TimelinePoint
           date="1616"
           title="Royal Portraits"
           summary="British ambassador Thomas Roe presents royal portraits to Jahangir as presents."
           key="art"
         />
-        <TimelinePoint
-          date="1627"
-          title="Mughal Emperor: Shah Jahan"
-          summary="through 1658"
-          key="people"
-          side="right"
-          referencedManifests={[
-            "https://api.dc.library.northwestern.edu/api/v2/works/b66de0be-ea16-4c49-8b4d-3c231ad5e2c3?as=iiif",
-          ]}
-        />
-        <TimelinePoint
+<TimelinePoint
+date="1627"
+title="Mughal Emperor: Shah Jahan"
+summary="through 1658"
+key="people"
+side="right"
+referencedManifests={[
+"https://api.dc.library.northwestern.edu/api/v2/works/b66de0be-ea16-4c49-8b4d-3c231ad5e2c3?as=iiif",
+]}
+/>
+<TimelinePoint
           date="1630"
           title="Taj Mahal"
           summary="Built by Shah Jahan to commemorate his wife, Mumtaz Mahal"
           key="art"
           side="left"
         />
-        <TimelinePoint
+<TimelinePoint
           date="1630"
           title="Peacock Throne"
           summary="Built for Shah Jahan, gilded and encrusted with semi-precious stones."
           key="art"
           side="left"
         />
-        <TimelinePoint
+<TimelinePoint
           date="1658"
           title="Mughal Emperor: Aurangzeb"
           summary="through 1707"
           key="people"
           side="right"
         />
-      </Timeline>
-    </div>
+</Timeline>
+</div>
+
   </ExhibitPanel>
 </ExhibitTab>
 

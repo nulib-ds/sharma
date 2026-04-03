@@ -57,7 +57,10 @@
   content: "";
   position: absolute;
   inset: -200px -18% 0 -18%;
-  background-image: url("https://iiif.dc.library.northwestern.edu/iiif/3/cbf1c097-97b3-4bf3-9397-20f6b4305c7a/full/2040,/0/default.jpg");
+  background-image: var(
+    --exhibit-experience-bg-image,
+    url("https://iiif.dc.library.northwestern.edu/iiif/3/cbf1c097-97b3-4bf3-9397-20f6b4305c7a/full/2040,/0/default.jpg")
+  );
   background-size: 120%;
   background-position: 50% -25px;
   background-attachment: fixed;
